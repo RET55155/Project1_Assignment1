@@ -58,7 +58,7 @@ public class Event {
         System.out.println("Location: " + location);
         System.out.println("Prize: " + prize);
         System.out.println("Max participants: " + maxParticipants);
-        System.out.println("Duration (days): " + durationDays);
+        System.out.println("Duration: " + durationDays);
     }
 
 }

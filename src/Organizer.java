@@ -1,28 +1,9 @@
-public class Organizer {
-    private String name;
-    private String contactEmail;
+public class Organizer extends Person {
     private int experienceYears;
 
     public Organizer(String name, String contactEmail, int experienceYears) {
-        this.name = name;
-        this.contactEmail = contactEmail;
+        super(name, contactEmail);
         this.experienceYears = experienceYears;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContactEmail() {
-        return contactEmail;
-    }
-
-    public void setContactEmail(String contactEmail) {
-        this.contactEmail = contactEmail;
     }
 
     public int getExperienceYears() {
@@ -30,12 +11,10 @@ public class Organizer {
     }
 
     public void setExperienceYears(int experienceYears) {
-        if (experienceYears >= 0) {
-            this.experienceYears = experienceYears;
-        }
+        this.experienceYears = experienceYears;
     }
 
     public void organizeEvent(Event event) {
-        System.out.println(name + " is organizing event: " + event.getTitle());
+        System.out.println(name + "organizing event: " + event.getTitle());
     }
 }

@@ -1,47 +1,29 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Event event1 = new Event(
-                "Jana Bolashak",
-                "31.12.2025",
-                "Astana",
-                "200000tg",
-                300,
-                5
-        );
-        Event event2 = new Event(
-                "City Hackathon",
-                "15.12.2025",
-                "Almaty",
-                "5000000",
-                2500,
-                3
-        );
-        System.out.println("Event 1: ");
-        event1.printEventInfo();
-        System.out.println("Event 2: ");
-        event2.printEventInfo();
+        EventManager manager = new EventManager();
+        manager.addEvent(new Event("Jana Bolashak", "31.12.2025", "Astana", "200000tg", 300, 5));
+        manager.addEvent(new Event("City Hackathon", "15.12.2025", "Almaty", "5000000", 2500, 3));
 
-        System.out.println("Сравнение - ");
-        if (event1.getMaxParticipants() > event2.getMaxParticipants()) {
-            System.out.println("Event 1 have more participants than Event 2");
+        ArrayList<Person> users = new ArrayList<>();
+
+        users.add(new Participant("Erkosh", "era@mail.com", 17));
+        users.add(new Organizer("Nike", "events@nike.kz", 10));
+
+        System.out.println("System Users: ");
+        for (Person p : users) {
+            System.out.println(p);
         }
-        else {
-            System.out.println("Event 2 have more participants than Event 1");
+
+        System.out.println("Sorting: ");
+        manager.sortByParticipants();
+        manager.showAllEvents();
+
+        System.out.println("Search: ");
+        Event found = manager.findByTitle("Jana Bolashak");
+        if (found != null) {
+            System.out.println("Found: " + found);
         }
-        Participant participant1 = new Participant(
-                "Erkosh",
-                "mdkwdkwmdk@mail.com",
-                17
-        );
-        System.out.println("Статус Регистраций");
-
-        participant1.register();
-
-        Organizer organizer = new Organizer(
-                "Nike",
-                "events@nike.kz",
-                10
-        );
-        organizer.organizeEvent(event1);
     }
 }
