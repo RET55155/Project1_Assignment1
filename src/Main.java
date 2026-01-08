@@ -25,5 +25,25 @@ public class Main {
         if (found != null) {
             System.out.println("Found: " + found);
         }
+
+        if (DBCJ.connect() != null) {
+            System.out.println("Connected to PostgreSQL!");
+        } else {
+            System.out.println("Connection failed");
+        }
+
+        Event event = new Event(
+                "Java Conference",
+                "2026-03-10",
+                "Almaty",
+                "Certificate",
+                100,
+                2
+        );
+
+        EventDAO dao = new EventDAO();
+        dao.addEvent(event);
+
+        dao.deleteEventByTitle("Test Event");
     }
 }
