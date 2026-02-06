@@ -1,3 +1,5 @@
+package com.example.project;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -44,6 +46,6 @@ public class Main {
         EventDAO dao = new EventDAO();
         dao.addEvent(event);
 
-        dao.deleteEventByTitle("Test Event");
+        dao.deleteEventByTitle("Test com.example.project.Event");
     }
 }

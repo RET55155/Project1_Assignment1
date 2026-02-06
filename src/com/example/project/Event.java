@@ -1,3 +1,5 @@
+package com.example.project;
+
 public class Event {
     private String title;
     private String date;
@@ -53,7 +55,7 @@ public class Event {
     }
 
     public void printEventInfo() {
-        System.out.println("Event: " + title);
+        System.out.println("com.example.project.Event: " + title);
         System.out.println("Date: " + date);
         System.out.println("Location: " + location);
         System.out.println("Prize: " + prize);

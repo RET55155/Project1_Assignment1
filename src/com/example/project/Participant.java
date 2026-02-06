@@ -1,3 +1,5 @@
+package com.example.project;
+
 public class Participant extends Person {
 
     private int age;
